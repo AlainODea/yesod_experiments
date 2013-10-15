@@ -12,3 +12,7 @@ import Yesod.Form.Jquery as X (urlJqueryJs)
 
 widgetFile :: FilePath -> ExpQ
 widgetFile = widgetFileReload def
+
+one :: Int
+one = 1
+something = "one" .= one

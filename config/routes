@@ -1,3 +1,5 @@
 / HomeR GET
 /fib/#Int FibR GET
+/hello/#String HelloR GET
+/aeson/#String AesonR GET
 /markdown MarkdownR PUT

@@ -4,6 +4,12 @@ function updateFib() {
     });
 }
 
+function updateHello() {
+    $.getJSON("/hello/" + $("#helloinput").val(), function (o) {
+        $("#hellooutput").text(o.value);
+    });
+}
+
 function updateMarkdown() {
     $.ajax("@{MarkdownR}", {
         data: {"markdown": $("#markdowninput").val()},
@@ -17,7 +23,10 @@ function updateMarkdown() {
 $(function(){
     updateFib();
     $("#fibinput").change(updateFib);
-    
+
+    updateHello();
+    $("#helloinput").change(updateHello);
+
     updateMarkdown();
     $("#updatemarkdown").click(updateMarkdown);
 })
