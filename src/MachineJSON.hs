@@ -80,7 +80,7 @@ instance ToJSON IPAddress where
             byte n x | n == 0 = x `shiftR` 24
                      | n == 1 = (x .&. 255 `shiftL` 16) `shiftR` 16
                      | n == 2 = (x .&. 255 `shiftL` 8) `shiftR` 8
-                     | n == 3 = (x .&. 255)
+                     | n == 3 = x .&. 255
                      | otherwise = 0
 
 instance ToJSON NIC where
